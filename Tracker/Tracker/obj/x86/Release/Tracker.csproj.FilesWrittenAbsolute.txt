@@ -1,0 +1,6 @@
+/home/slothofdoom/Desktop/Programming/Tracker/Tracker/obj/x86/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/slothofdoom/Desktop/Programming/Tracker/Tracker/obj/x86/Release/Tracker.gtk-gui.gui.stetic
+/home/slothofdoom/Desktop/Programming/Tracker/Tracker/bin/Release/Tracker.pdb
+/home/slothofdoom/Desktop/Programming/Tracker/Tracker/bin/Release/Tracker.exe
+/home/slothofdoom/Desktop/Programming/Tracker/Tracker/obj/x86/Release/Tracker.exe
+/home/slothofdoom/Desktop/Programming/Tracker/Tracker/obj/x86/Release/Tracker.pdb
