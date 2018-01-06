@@ -1,12 +1,15 @@
 ﻿<Properties StartupItem="Tracker/Tracker.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Tracker/Program.cs">
     <Files>
-      <File FileName="Tracker/Program.cs" Line="4" Column="8" />
+      <File FileName="Tracker/Program.cs" Line="19" Column="4" />
+      <File FileName="Tracker/MainWindow.cs" Line="27" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="Tracker/MainWindow.cs" line="16" offsetX="952" offsetY="240" expression="connection.ConnectionString" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>
