@@ -16,7 +16,7 @@ namespace Tracker
 			win.Show ();
 			Application.Run ();
 
-			MySqlConnection connection = new MySqlConnection(); 
+			/*MySqlConnection connection = new MySqlConnection(); 
 			        connection.ConnectionString = "Server=localhost;Database=TestDB;User ID=root;Password=dc;Pooling=false";
 			        MySqlCommand command = connection.CreateCommand();
 			        command.CommandText = " SELECT ID FROM Employees GROUP BY ID;";
@@ -28,11 +28,13 @@ namespace Tracker
 				        {
 				List<string> row = new List<string>();
 				            for (int i = 0; i < Reader.FieldCount; i++)
-					                row.Add Reader.GetValue(i).ToString();
+					row.Add (Reader.GetValue(i).ToString());
 				win.AddtoCombobox (row);
 				        }
 
-			        connection.Close();
+			        connection.Close();*/
+
+		
 		}
 	
 	}
