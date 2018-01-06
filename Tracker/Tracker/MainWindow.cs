@@ -6,22 +6,27 @@ using MySql.Data.MySqlClient;
 
 public partial class MainWindow: Gtk.Window
 {
-	
-	public MainWindow () : base (Gtk.WindowType.Toplevel)
+	public List<string> comboList = new List<string>();
+
+	public void AddtoCombobox(List<string>comboList);
 	{
-		
-		List<string> comboList = new List<string>();
-		comboList.Add ("Dave");
-	
-
-		Build ();
-	
-
 		foreach (string ID in comboList)
 		{
 			combobox1.AppendText (ID);
 
 		}
+	}
+	public MainWindow () : base (Gtk.WindowType.Toplevel)
+	{
+		
+
+		 
+	//
+
+		Build ();
+	
+
+
 
 	}
 

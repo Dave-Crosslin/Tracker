@@ -29,7 +29,7 @@ namespace Tracker
 				            string row = "";
 				            for (int i = 0; i < Reader.FieldCount; i++)
 					                row += Reader.GetValue(i).ToString() + ", ";
-				            comboList.Add(Convert.ToString(Reader));
+				win.AddtoCombobox (row);
 				        }
 
 			        connection.Close();
