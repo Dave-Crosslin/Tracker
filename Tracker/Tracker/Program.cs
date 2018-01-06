@@ -13,10 +13,8 @@ namespace Tracker
 		{
 			Application.Init ();
 			MainWindow win = new MainWindow ();
-			win.Show ();
-			Application.Run ();
 
-			/*MySqlConnection connection = new MySqlConnection(); 
+			MySqlConnection connection = new MySqlConnection(); 
 			        connection.ConnectionString = "Server=localhost;Database=TestDB;User ID=root;Password=dc;Pooling=false";
 			        MySqlCommand command = connection.CreateCommand();
 			        command.CommandText = " SELECT ID FROM Employees GROUP BY ID;";
@@ -32,13 +30,13 @@ namespace Tracker
 				win.AddtoCombobox (row);
 				        }
 
-			        connection.Close();*/
+			        connection.Close();
 
 
-			List<string>comboList = new List<string>();
-			comboList.Add("Dave");
-			win.AddtoCombobox (comboList);
-		
+
+			win.Show ();
+			Application.Run ();
+
 		}
 	
 	}

@@ -7,9 +7,9 @@ using MySql.Data.MySqlClient;
 public partial class MainWindow: Gtk.Window
 {
 
-	public void AddtoCombobox (List<string>comboList)
+	public void AddtoCombobox (List<string>row)
 	{
-		foreach (string ID in comboList)
+		foreach (string ID in row)
 		{
 			combobox1.AppendText (ID);
 
@@ -18,17 +18,12 @@ public partial class MainWindow: Gtk.Window
 	public MainWindow () : base (Gtk.WindowType.Toplevel)
 	{
 		
-		List<string>comboList = new List<string>();
-		comboList.Add("Steve");
+
 
 
 		Build ();
 	
-		foreach (string ID in comboList)
-		{
-			combobox1.AppendText (ID);
 
-		}
 
 
 	}
