@@ -37,7 +37,7 @@ namespace Tracker
 
 			List<string>comboList = new List<string>();
 			comboList.Add("Dave");
-			win.AddtoCombobox;
+			win.AddtoCombobox (comboList);
 		
 		}
 	

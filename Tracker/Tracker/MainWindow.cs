@@ -18,7 +18,8 @@ public partial class MainWindow: Gtk.Window
 	public MainWindow () : base (Gtk.WindowType.Toplevel)
 	{
 		
-
+		List<string>comboList = new List<string>();
+		comboList.Add("Steve");
 
 
 		Build ();
