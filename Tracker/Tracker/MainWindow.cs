@@ -6,11 +6,10 @@ using MySql.Data.MySqlClient;
 
 public partial class MainWindow: Gtk.Window
 {
-	public List<string> comboList = new List<string>();
 
-	public void AddtoCombobox(List<string>comboList);
+	public void AddtoCombobox (List<string>row)
 	{
-		foreach (string ID in comboList)
+		foreach (string ID in row)
 		{
 			combobox1.AppendText (ID);
 

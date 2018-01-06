@@ -26,9 +26,9 @@ namespace Tracker
 
 			        while (Reader.Read())
 				        {
-				            string row = "";
+				List<string> row = new List<string>();
 				            for (int i = 0; i < Reader.FieldCount; i++)
-					                row += Reader.GetValue(i).ToString() + ", ";
+					                row.Add Reader.GetValue(i).ToString();
 				win.AddtoCombobox (row);
 				        }
 
