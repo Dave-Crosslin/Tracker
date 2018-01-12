@@ -14,13 +14,13 @@ namespace Tracker
 			Application.Init ();
 			MainWindow win = new MainWindow ();
 
-			MySqlConnection connection = new MySqlConnection(); 
-			        connection.ConnectionString = "Server=localhost;Database=TestDB;User ID=root;Password=dc;Pooling=false";
+					MySqlConnection connection = new MySqlConnection(); 
+					connection.ConnectionString = "Server=localhost;Database=TestDB;User ID=root;Password=dc;Pooling=false"; 
 			        MySqlCommand command = connection.CreateCommand();
 			        command.CommandText = " SELECT ID FROM Employees GROUP BY ID;";
 			        MySqlDataReader Reader;
-			        connection.Open();
-			        Reader = command.ExecuteReader();
+			   		connection.Open();
+				    Reader = command.ExecuteReader();
 
 			        while (Reader.Read())
 				        {
@@ -33,6 +33,8 @@ namespace Tracker
 			        connection.Close();
 
 
+				
+			
 
 			win.Show ();
 			Application.Run ();
