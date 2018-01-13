@@ -14,15 +14,25 @@ namespace Tracker
 			Application.Init ();
 			MainWindow win = new MainWindow ();
 
-					MySqlConnection connection = new MySqlConnection(); 
-					connection.ConnectionString = "Server=localhost;Database=TestDB;User ID=root;Password=dc;Pooling=false"; 
-			        MySqlCommand command = connection.CreateCommand();
-			        command.CommandText = " SELECT ID FROM Employees GROUP BY ID;";
-			        MySqlDataReader Reader;
-			   		connection.Open();
-				    Reader = command.ExecuteReader();
+					
+	
+			ConnectionHandler Conn = new ConnectionHandler ();
+			Conn.DBConnOpen ();
+			QueryHandler Handler = new QueryHandler ();
+			Handler.QueryCreate ();
+			Handler.QueryExecute ();
 
-			        while (Reader.Read())
+					//MySqlConnection connection = new MySqlConnection(); 
+					//connection.ConnectionString = "Server=localhost;Database=TestDB;User ID=root;Password=dc;Pooling=false"; 
+			       
+					//MySqlCommand command = connection.CreateCommand();---------------make as a function outside the classes?
+			       
+					//command.CommandText = " SELECT ID FROM Employees GROUP BY ID;";
+			        //MySqlDataReader Reader;
+			   		//connection.Open();
+				    //Reader = command.ExecuteReader();
+
+			while (Reader.Read())
 				        {
 				List<string> row = new List<string>();
 				            for (int i = 0; i < Reader.FieldCount; i++)
@@ -30,7 +40,7 @@ namespace Tracker
 				win.AddtoCombobox (row);
 				        }
 
-			        connection.Close();
+			        //connection.Close();
 
 
 				
