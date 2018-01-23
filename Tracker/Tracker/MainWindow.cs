@@ -5,9 +5,14 @@ using System.Linq;
 using Gtk;
 using MySql.Data.MySqlClient;
 
-
 public partial class MainWindow: Gtk.Window
-{
+{   DBHandler dbhandler; 
+	public void SetDBHandler(DBHandler dbhandler)
+	{
+		this.dbhandler = DBHandler;
+
+	}
+	public string Name;
 
 	public void AddtoCombobox (List<string>row)
 	{
@@ -40,6 +45,8 @@ public partial class MainWindow: Gtk.Window
 		
 	protected void OnCombobox1Changed (object sender, EventArgs e)
 	{
-		Console.WriteLine (combobox1.ActiveText);
+		
+		Query = combobox1.ActiveText;
+
 	}
 }
