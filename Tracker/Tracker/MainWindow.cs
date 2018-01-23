@@ -9,7 +9,7 @@ public partial class MainWindow: Gtk.Window
 {   DBHandler dbhandler; 
 	public void SetDBHandler(DBHandler dbhandler)
 	{
-		this.dbhandler = DBHandler;
+		this.dbhandler = dbhandler;
 
 	}
 	public string Name;
