@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using Gtk;
 using MySql.Data.MySqlClient;
+
 
 
 namespace Tracker
@@ -15,32 +17,29 @@ namespace Tracker
 			MainWindow win = new MainWindow ();
 
 					
-	
-			ConnectionHandler Conn = new ConnectionHandler ();
-			Conn.DBConnOpen ();
-			QueryHandler Handler = new QueryHandler ();
-			Handler.QueryCreate ();
-			Handler.QueryExecute ();
+			DBHandler handler = new DBHandler ();
+			handler.ConnectionOpen ();
+			handler.QueryExecute ();
 
-					//MySqlConnection connection = new MySqlConnection(); 
-					//connection.ConnectionString = "Server=localhost;Database=TestDB;User ID=root;Password=dc;Pooling=false"; 
-			       
-					//MySqlCommand command = connection.CreateCommand();---------------make as a function outside the classes?
-			       
-					//command.CommandText = " SELECT ID FROM Employees GROUP BY ID;";
-			        //MySqlDataReader Reader;
-			   		//connection.Open();
-				    //Reader = command.ExecuteReader();
 
-			while (Reader.Read())
-				        {
-				List<string> row = new List<string>();
-				            for (int i = 0; i < Reader.FieldCount; i++)
-					row.Add (Reader.GetValue(i).ToString());
+			/*MySqlConnection connection = new MySqlConnection(); 
+			connection.ConnectionString = "Server=localhost;Database=TestDB;User ID=root;Password=dc;Pooling=false"; 
+			MySqlCommand command = connection.CreateCommand();
+			command.CommandText = " SELECT ID FROM Employees GROUP BY ID;";
+			MySqlDataReader Reader;
+			connection.Open();
+			Reader = command.ExecuteReader();
+
+
+
+			while (Reader.Read ()) {
+				List<string> row = new List<string> ();
+				for (int i = 0; i < Reader.FieldCount; i++)
+					row.Add (Reader.GetValue (i).ToString ());
 				win.AddtoCombobox (row);
-				        }
-
-			        //connection.Close();
+			} 
+			
+			connection.Close();*/
 
 
 				
@@ -53,3 +52,5 @@ namespace Tracker
 	
 	}
 }
+
+	
