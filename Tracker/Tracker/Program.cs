@@ -20,7 +20,8 @@ namespace Tracker
 			DBHandler handler = new DBHandler ();
 			handler.ConnectionOpen ();
 			handler.QueryExecute ();
-			win.AddtoCombobox (handler.row);
+			List<string> row = handler.QueryExecute ();
+			win.AddtoCombobox (row);
 	
 
 			/*MySqlConnection connection = new MySqlConnection(); 

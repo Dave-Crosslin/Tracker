@@ -14,7 +14,7 @@ namespace Tracker
 
 		
 
-		public List<string> row = new List<string> ();
+
 
 		private static MySqlConnection connection = new MySqlConnection();
 
@@ -53,19 +53,21 @@ namespace Tracker
 
 		MySqlDataReader Reader;
 
-		public void QueryExecute()
+		public List<string> QueryExecute()
 		{	
+			List<string> row = new List<string> ();
+
 			MySqlCommand command = connection.CreateCommand ();
 			command.CommandText = " SELECT ID FROM Employees GROUP BY ID;";
 			Reader = command.ExecuteReader ();
 
 			while (Reader.Read ()) {
 
-				for (int i = 0; i < Reader.FieldCount; i++)
+				for (int i = 0; i < Reader.FieldCount; i++) {
 					row.Add (Reader.GetValue (i).ToString ());
-				
+				}
 		   } 
-
+			return row;
 	    }    
 	}
 }

@@ -9,7 +9,7 @@ using Tracker;
 public partial class MainWindow: Gtk.Window
 {   DBHandler handler; 
 
-	String ID;
+	string ID;
     
 	public void GetActiveText(string ID)
 	{
@@ -60,8 +60,9 @@ public partial class MainWindow: Gtk.Window
 	protected void OnCombobox1Changed (object sender, EventArgs e)
 	{
 
-		ID = combobox1.ActiveText;
-		GetActiveText(ID);
+		/*ID = combobox1.ActiveText;
+		GetActiveText(ID);*/
+		Console.WriteLine (combobox1.ActiveText);
 
 	}
  
