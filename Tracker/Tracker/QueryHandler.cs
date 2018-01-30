@@ -5,11 +5,33 @@ using System.Linq;
 using Gtk;
 using MySql.Data.MySqlClient;
 
+
 namespace Tracker
+
 {
 	public class DBHandler
 	{ 	
-		MySqlConnection connection = new MySqlConnection(); 
+
+		
+
+		public List<string> row = new List<string> ();
+
+		private static MySqlConnection connection = new MySqlConnection();
+
+		public string name;
+
+		public void setname(string ID)
+		{
+			if (ID != "")
+			{
+				name = ID;
+			}
+			else 
+			{
+				name = "error";
+			}
+
+		}
 
 		public void ConnectionOpen()
 		{
@@ -22,36 +44,32 @@ namespace Tracker
 			connection.Close ();
 		}
 	
-		public void QueryCreate()
+		public void QueryCreate(string name)
 		{
-			
+			string commtext = String.Format ("Select Production from Employees where ID = {0};", name);
 		}
 
-	    MySqlCommand command = connection.CreateCommand();
+	    
 
 		MySqlDataReader Reader;
 
 		public void QueryExecute()
 		{	
-			//MySqlCommand command = connection.CreateCommand ();
+			MySqlCommand command = connection.CreateCommand ();
 			command.CommandText = " SELECT ID FROM Employees GROUP BY ID;";
-			Reader = command.ExecuteReader();
+			Reader = command.ExecuteReader ();
 
 			while (Reader.Read ()) {
-				List<string> row = new List<string> ();
+
 				for (int i = 0; i < Reader.FieldCount; i++)
 					row.Add (Reader.GetValue (i).ToString ());
-				QueryStore(row);
-			} 
-		}
+				
+		   } 
 
-
-		public void QueryStore(List<string>Row)
-		{
-
-		}
+	    }    
 	}
 }
+
 
 		
 		

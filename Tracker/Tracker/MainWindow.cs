@@ -4,24 +4,38 @@ using System.Data;
 using System.Linq;
 using Gtk;
 using MySql.Data.MySqlClient;
+using Tracker;
 
 public partial class MainWindow: Gtk.Window
-{   DBHandler dbhandler; 
-	public void SetDBHandler(DBHandler dbhandler)
+{   DBHandler handler; 
+
+	String ID;
+    
+	public void GetActiveText(string ID)
 	{
-		this.dbhandler = dbhandler;
+		if (ID != "") { 
+			handler.name = ID;
+		} else {
+			handler.name = "error";
+		}
+	}
+
+	public void SetDBHandler(DBHandler handler)
+	{
+		this.handler = handler;
 
 	}
-	public string Name;
 
 	public void AddtoCombobox (List<string>row)
 	{
-		foreach (string ID in row)
+		foreach(string ID in row)
 		{
 			combobox1.AppendText (ID);
 
 		}
 	}
+
+
 	public MainWindow () : base (Gtk.WindowType.Toplevel)
 	{
 		
@@ -45,8 +59,13 @@ public partial class MainWindow: Gtk.Window
 		
 	protected void OnCombobox1Changed (object sender, EventArgs e)
 	{
-		
-		Query = combobox1.ActiveText;
+
+		ID = combobox1.ActiveText;
+		GetActiveText(ID);
 
 	}
+ 
+
+
 }
+

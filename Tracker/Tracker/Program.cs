@@ -20,7 +20,8 @@ namespace Tracker
 			DBHandler handler = new DBHandler ();
 			handler.ConnectionOpen ();
 			handler.QueryExecute ();
-
+			win.AddtoCombobox (handler.row);
+	
 
 			/*MySqlConnection connection = new MySqlConnection(); 
 			connection.ConnectionString = "Server=localhost;Database=TestDB;User ID=root;Password=dc;Pooling=false"; 
