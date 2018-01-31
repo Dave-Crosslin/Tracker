@@ -20,6 +20,7 @@ namespace Tracker
 
 		public string name;
 
+
 		public void setname(string ID)
 		{
 			if (ID != "")
@@ -51,7 +52,7 @@ namespace Tracker
 
 	    
 
-		MySqlDataReader Reader;
+
 
 		public List<string> QueryExecute()
 		{	
@@ -59,14 +60,15 @@ namespace Tracker
 
 			MySqlCommand command = connection.CreateCommand ();
 			command.CommandText = " SELECT ID FROM Employees GROUP BY ID;";
-			Reader = command.ExecuteReader ();
+			using (MySqlDataReader Reader = command.ExecuteReader ()) {
 
-			while (Reader.Read ()) {
+				while (Reader.Read ()) {
 
-				for (int i = 0; i < Reader.FieldCount; i++) {
-					row.Add (Reader.GetValue (i).ToString ());
-				}
-		   } 
+					for (int i = 0; i < Reader.FieldCount; i++) {
+						row.Add (Reader.GetValue (i).ToString ());
+					}
+				} 
+			}
 			return row;
 	    }    
 	}

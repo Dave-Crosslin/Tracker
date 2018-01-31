@@ -18,6 +18,8 @@ namespace Tracker
 
 					
 			DBHandler handler = new DBHandler ();
+	
+		
 			handler.ConnectionOpen ();
 			handler.QueryExecute ();
 			List<string> row = handler.QueryExecute ();
