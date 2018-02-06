@@ -24,8 +24,9 @@ namespace Tracker
 			handler.QueryExecute ();
 			List<string> row = handler.QueryExecute ();
 			win.AddtoCombobox (row);
-	
 
+	
+		
 			/*MySqlConnection connection = new MySqlConnection(); 
 			connection.ConnectionString = "Server=localhost;Database=TestDB;User ID=root;Password=dc;Pooling=false"; 
 			MySqlCommand command = connection.CreateCommand();
