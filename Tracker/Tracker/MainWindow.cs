@@ -58,8 +58,8 @@ public partial class MainWindow: Gtk.Window
 		string commtext = Handler.QueryCreate (Handler.name);
 		List<string> row = Handler.QueryExecute (commtext);
 
-		foreach (String ID in row) {
-			Console.WriteLine (ID);
+		foreach (String Production in row) {
+			Console.WriteLine (Production);
 
 		}
 
