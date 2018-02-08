@@ -62,12 +62,6 @@ public partial class MainWindow: Gtk.Window
 			Console.WriteLine (Production);
 
 		}
-
-
-
 	}
- 
-
-
 }
 

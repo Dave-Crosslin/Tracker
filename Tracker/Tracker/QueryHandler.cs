@@ -11,28 +11,10 @@ namespace Tracker
 {
 	public class DBHandler
 	{ 	
-
-	
-
-
-
 		private static MySqlConnection connection = new MySqlConnection();
 
 		public string name;
 
-
-		public void setname(string ID)
-		{
-			if (ID != "")
-			{
-				name = ID;
-			}
-			else 
-			{
-				name = "error";
-			}
-
-		}
 
 		public void ConnectionOpen()
 		{
