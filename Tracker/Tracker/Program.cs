@@ -21,33 +21,13 @@ namespace Tracker
 	
 		
 			handler.ConnectionOpen ();
-			handler.QueryExecute ();
-			List<string> row = handler.QueryExecute ();
+			string commtext = " SELECT ID FROM Employees GROUP BY ID;";
+			List<string> row = handler.QueryExecute (commtext);
 			win.AddtoCombobox (row);
 
 	
 		
-			/*MySqlConnection connection = new MySqlConnection(); 
-			connection.ConnectionString = "Server=localhost;Database=TestDB;User ID=root;Password=dc;Pooling=false"; 
-			MySqlCommand command = connection.CreateCommand();
-			command.CommandText = " SELECT ID FROM Employees GROUP BY ID;";
-			MySqlDataReader Reader;
-			connection.Open();
-			Reader = command.ExecuteReader();
 
-
-
-			while (Reader.Read ()) {
-				List<string> row = new List<string> ();
-				for (int i = 0; i < Reader.FieldCount; i++)
-					row.Add (Reader.GetValue (i).ToString ());
-				win.AddtoCombobox (row);
-			} 
-			
-			connection.Close();*/
-
-
-				
 			
 
 			win.Show ();

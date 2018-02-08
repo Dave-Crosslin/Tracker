@@ -56,7 +56,7 @@ public partial class MainWindow: Gtk.Window
 
 		Handler.name = combobox1.ActiveText;
 		string commtext = Handler.QueryCreate (Handler.name);
-		List<string> row = Handler.QueryExecute2 (commtext);
+		List<string> row = Handler.QueryExecute (commtext);
 
 		foreach (String ID in row) {
 			Console.WriteLine (ID);
