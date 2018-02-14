@@ -1,0 +1,14 @@
+﻿<Properties StartupItem="100Doors/100Doors.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="100Doors/Program.cs">
+    <Files>
+      <File FileName="100Doors/Program.cs" Line="24" Column="1" />
+      <File FileName="100Doors/ArrayHelper.cs" Line="17" Column="1" />
+      <File FileName="100Doors/Door.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
