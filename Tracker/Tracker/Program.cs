@@ -4,8 +4,10 @@ using System.Data;
 using System.Linq;
 using Gtk;
 using MySql.Data.MySqlClient;
-
-
+using OxyPlot;
+using OxyPlot.GtkSharp;
+using OxyPlot.Axes;
+using OxyPlot.Series;
 
 namespace Tracker
 {

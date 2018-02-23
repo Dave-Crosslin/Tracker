@@ -4,6 +4,10 @@ using System.Data;
 using System.Linq;
 using Gtk;
 using MySql.Data.MySqlClient;
+using OxyPlot;
+using OxyPlot.GtkSharp;
+using OxyPlot.Axes;
+using OxyPlot.Series;
 
 
 namespace Tracker
@@ -18,7 +22,7 @@ namespace Tracker
 
 		public void ConnectionOpen()
 		{
-			connection.ConnectionString = "Server=localhost;Database=TestDB;User ID=root;Password=dc;Pooling=false"; 
+			connection.ConnectionString = "Server=localhost;Database=TestDB;User ID=root;Password=DC;Pooling=false"; 
 			connection.Open();
 		}
 
@@ -29,7 +33,7 @@ namespace Tracker
 	
 		public string QueryCreate(string name)
 		{
-			string commtext = String.Format ("SELECT Production FROM Employees WHERE ID = '{0}';", name);
+			string commtext = String.Format ("SELECT Production, DT FROM Employees WHERE ID = '{0}';", name);
 			return commtext;
 		}
 
