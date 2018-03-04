@@ -28,7 +28,6 @@ namespace Tracker
 			win.AddtoCombobox (row);
 
 	
-		
 
 			
 
@@ -36,7 +35,6 @@ namespace Tracker
 			Application.Run ();
 
 		}
-	
 	}
 }
 

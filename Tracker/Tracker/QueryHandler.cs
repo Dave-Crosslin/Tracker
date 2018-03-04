@@ -30,7 +30,7 @@ namespace Tracker
 		{
 			connection.Close ();
 		}
-	
+
 		public string QueryCreate(string name)
 		{
 			string commtext = String.Format ("SELECT Production, DT FROM Employees WHERE ID = '{0}';", name);

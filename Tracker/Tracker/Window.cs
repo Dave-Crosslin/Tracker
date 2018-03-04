@@ -23,7 +23,6 @@ namespace Tracker
 		/*public void SetDBHandler(DBHandler Handler)
 		{
 			this.Handler = Handler;
-
 		} */
 
 
@@ -51,13 +50,13 @@ namespace Tracker
 
 		protected void OnCombobox1Changed (object sender, EventArgs e)
 		{
-			
+
 			Handler.name = combobox1.ActiveText;
 			string commtext = Handler.QueryCreate (Handler.name);
 			List<string> row = Handler.QueryExecute (commtext);
-
-			foreach (String Production in row) {
-				Console.WriteLine (Production);
+			Dictionary<DateTime,int> dictionary = graph.Parser (row);
+			foreach (var item in dictionary) {
+				Console.WriteLine (item.Key +" " + item.Value );
 			}
 
 
@@ -67,9 +66,8 @@ namespace Tracker
 			vbox1.Add (graph.PV);
 
 
-		
-			
+
+
 		}
 	}
 }
-
