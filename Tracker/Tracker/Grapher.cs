@@ -57,32 +57,27 @@ namespace Tracker
 		}
 
 		public Dictionary<DateTime,int> Parser(List<string>row)
-		{    List<DateTime>myDateTimes = new List<DateTime>();
-			 List<int> myInt = new List<int> ();
-			 List<DateTime> dtFormat = new List<DateTime> ();
+		{   
+			DateTime myDT = new DateTime();
+			int myInt = 0;
+			
+			 
 			 Dictionary<DateTime,int> dictionary = new Dictionary<DateTime,int>();
 
 			foreach (string str in row) {
 				if (str.Contains (':')) {
+					
+					myDT = Convert.ToDateTime(str);
 
-					myDateTimes.Add (Convert.ToDateTime (str));
+
 				} else {
 					
-					myInt.Add (Convert.ToInt32 (str));
+					myInt = Convert.ToInt32(str);
+
 				}
-			}
+		     }
 
-			foreach (DateTime dt in dtFormat) {
-
-				myDateTimes.Add (dt);
-			}
-		
-
-			foreach (var pair in myDateTimes.Zip(myInt, Tuple.Create)) 
-			{
-				dictionary.Add (pair.Item1, pair.Item2);
-			}
-
+			dictionary.Add (myDT, myInt);
 			return dictionary;
 		}
 	}

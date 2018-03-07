@@ -2,10 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Tracker/QueryHandler.cs">
     <Files>
-      <File FileName="Tracker/Program.cs" Line="31" Column="4" />
-      <File FileName="Tracker/Window.cs" Line="71" Column="4" />
-      <File FileName="Tracker/QueryHandler.cs" Line="58" Column="3" />
-      <File FileName="Tracker/Grapher.cs" Line="56" Column="5" />
+      <File FileName="Tracker/Program.cs" Line="22" Column="41" />
+      <File FileName="Tracker/Window.cs" Line="56" Column="1" />
+      <File FileName="Tracker/QueryHandler.cs" Line="40" Column="35" />
+      <File FileName="Tracker/Grapher.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
