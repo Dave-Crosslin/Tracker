@@ -54,7 +54,7 @@ namespace Tracker
 			Handler.name = combobox1.ActiveText;
 			string commtext = Handler.QueryCreate (Handler.name);
 			List<string> row = Handler.QueryExecute (commtext);
-			Dictionary<DateTime,int> dictionary = graph.Parser (row);
+			Dictionary<Int64,int> dictionary = graph.Parser (row);
 			foreach (var item in dictionary) {
 				Console.WriteLine (item.Key +" " + item.Value );
 			}
