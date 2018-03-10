@@ -22,7 +22,7 @@ namespace Tracker
 	
 
 
-		public PlotView CreateGraph(DBHandler Handler)
+		public PlotView CreateGraph(DBHandler Handler, Dictionary<Int64,int>dictionary)
 		{ 
 			string title = Handler.name;
 
@@ -39,10 +39,10 @@ namespace Tracker
 				MarkerFill = OxyColors.Red,
 				MarkerStrokeThickness = 3
 			};
-			s1.Points.Add(new DataPoint(10, 10));
-			s1.Points.Add(new DataPoint(10, 40));
-			s1.Points.Add(new DataPoint(40, 20));
-			s1.Points.Add(new DataPoint(60, 30));
+			foreach (var pair in dictionary) {
+				s1.Points.Add (new DataPoint (pair.Key, pair.Value));
+			}
+		
 			myModel.Series.Add(s1);
 			plotView.Model = myModel;
 
@@ -72,13 +72,12 @@ namespace Tracker
 
 					myDT = Int64.Parse(formatDT.ToString("HHmm"));
 
+
 				} else {
 					
 					myInt = Convert.ToInt32(str);
-
 				}
 		     }
-
 			dictionary.Add (myDT, myInt);
 			return dictionary;
 		}

@@ -18,13 +18,12 @@ namespace Tracker
 			Application.Init ();
 			MainWindow win = new MainWindow ();
 
-					
 			DBHandler handler = new DBHandler ();
 	
 		
 			handler.ConnectionOpen ();
 			string commtext = " SELECT ID FROM Employees GROUP BY ID;";
-			List<string> row = handler.QueryExecute (commtext);
+			List<string> row = handler.comboboxFill (commtext);
 			win.AddtoCombobox (row);
 
 	

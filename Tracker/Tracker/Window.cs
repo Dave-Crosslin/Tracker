@@ -53,15 +53,14 @@ namespace Tracker
 
 			Handler.name = combobox1.ActiveText;
 			string commtext = Handler.QueryCreate (Handler.name);
-			List<string> row = Handler.QueryExecute (commtext);
-			Dictionary<Int64,int> dictionary = graph.Parser (row);
-			foreach (var item in dictionary) {
+			Dictionary<Int64,int>Dict = Handler.QueryExecute (commtext);
+			foreach (var item in Dict) {
 				Console.WriteLine (item.Key +" " + item.Value );
 			}
 
 
 			graph.RedrawGraph (graph, vbox1);
-			graph.PV = graph.CreateGraph (Handler);
+			graph.PV = graph.CreateGraph (Handler,Dict);
 
 			vbox1.Add (graph.PV);
 
