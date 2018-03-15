@@ -20,13 +20,6 @@ namespace Tracker
 
 
 
-		/*public void SetDBHandler(DBHandler Handler)
-		{
-			this.Handler = Handler;
-		} */
-
-
-
 		public void AddtoCombobox (List<string>row)
 		{
 			foreach(string ID in row)
@@ -63,10 +56,6 @@ namespace Tracker
 			graph.PV = graph.CreateGraph (Handler,Dict);
 
 			vbox1.Add (graph.PV);
-
-
-
-
 		}
 	}
 }

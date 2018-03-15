@@ -55,32 +55,6 @@ namespace Tracker
 				vbox1.Remove (graph.PV);
 			}
 		}
-
-		public Dictionary<Int64,int> Parser(List<string>row)
-		{   
-			DateTime formatDT = new DateTime ();
-			Int64 myDT = 0;
-			int myInt = 0;
-			
-			 
-			Dictionary<Int64,int> dictionary = new Dictionary<Int64,int>();
-
-			foreach (string str in row) {
-				if (str.Contains (':')) {
-					
-					formatDT = Convert.ToDateTime (str);
-
-					myDT = Int64.Parse(formatDT.ToString("HHmm"));
-
-
-				} else {
-					
-					myInt = Convert.ToInt32(str);
-				}
-		     }
-			dictionary.Add (myDT, myInt);
-			return dictionary;
-		}
 	}
 }
 	

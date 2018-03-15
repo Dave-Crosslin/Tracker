@@ -48,8 +48,6 @@ namespace Tracker
 
 				while (Reader.Read ()) {
 
-					DateTime formatDT = new DateTime ();
-
 					int myInt = Convert.ToInt32(Reader.GetValue (0).ToString ());
 
 					Int64 myDT = Int64.Parse(Convert.ToDateTime (Reader.GetValue (1).ToString ()).ToString("HH"));
