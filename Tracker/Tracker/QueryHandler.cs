@@ -33,40 +33,38 @@ namespace Tracker
 
 		public string QueryCreate(string name)
 		{
-			string commtext = String.Format ("SELECT Production, DT FROM Employees WHERE ID = '{0}';", name);
+			string commtext = String.Format ("SELECT Production, DT FROM Employees WHERE ID = '{0}' GROUP BY DT, Production;", name);
 			return commtext;
 		}
 
 		public Dictionary<Int64,int>QueryExecute(string commtext) 
 		{	
-			DateTime formatDT = new DateTime ();
-			Int64 myDT = 0;
-			int myInt = 0;
-
 			Dictionary <Int64, int> Dict = new Dictionary<Int64,int>();
-			List<string> row = new List<string> ();
 
 			MySqlCommand command = connection.CreateCommand ();
 			command.CommandText = commtext;
 			using (MySqlDataReader Reader = command.ExecuteReader ()) {
 
+
 				while (Reader.Read ()) {
 
-					for (int i = 0; i < Reader.FieldCount; i++) {
-						row.Add (Reader.GetValue (i).ToString ());
+					DateTime formatDT = new DateTime ();
+
+					int myInt = Convert.ToInt32(Reader.GetValue (0).ToString ());
+
+					Int64 myDT = Int64.Parse(Convert.ToDateTime (Reader.GetValue (1).ToString ()).ToString("HH"));
+
+
+					if(Dict.ContainsKey(myDT)){
+						
+						Dict [myDT] += myInt;
+					}
+					else {
+
+					Dict.Add(myDT,myInt);
+
 					}
 				} 
-
-			/*The above while loop is definitely only giving me one List that contains data from many rows in my DB,
-			 * it is not giving me multiple lists called row that I can just parse by doing (row[0]) (row([1])
-			 * in the code below. The only solution I can see is to parse the info in row to two separate lists, 
-			 * then use a zip function to combine the lists to my dictionary. Let me know what you think and if 
-			 * I'm missing something here, thank you*/
-
-			formatDT = Convert.ToDateTime (row[1]);
-			myDT = Int64.Parse(formatDT.ToString("HHmm"));
-			myInt = Convert.ToInt32(row[0]);
-			Dict.Add(myDT,myInt);
 			
 			return Dict;
 		}    

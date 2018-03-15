@@ -36,7 +36,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Door.cs" />
-    <Compile Include="EmptyClass.cs" />
     <Compile Include="ArrayHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
