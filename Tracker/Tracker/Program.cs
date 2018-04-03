@@ -8,6 +8,8 @@ using OxyPlot;
 using OxyPlot.GtkSharp;
 using OxyPlot.Axes;
 using OxyPlot.Series;
+using Google.Protobuf;
+using Grpc.Core;
 
 namespace Tracker
 {

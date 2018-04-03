@@ -8,30 +8,30 @@ using OxyPlot;
 using OxyPlot.GtkSharp;
 using OxyPlot.Axes;
 using OxyPlot.Series;
-
+using Google.Protobuf;
+using Grpc.Core;
 
 namespace Tracker
 {
 	public class Grapher
-	{   
+	{
 		public PlotView PV;
 
 		public Grapher ()
 		{
 		}
-	
 
 
-		public PlotView CreateGraph(DBHandler Handler, Dictionary<Int64,int>dictionary)
+
+		public PlotView CreateGraph (DBHandler Handler, Dictionary<Int64,int>dictionary)
 		{ 
 			string title = Handler.name;
 
-			var plotView = new PlotView();
-			plotView.ShowAll();
+			var plotView = new PlotView ();
+			plotView.ShowAll ();
 
 			var myModel = new PlotModel { Title = title };
-			var s1 = new LineSeries ()
-			{
+			var s1 = new LineSeries () {
 				Color = OxyColors.Blue,
 				MarkerType = MarkerType.Circle,
 				MarkerSize = 6,
@@ -43,7 +43,7 @@ namespace Tracker
 				s1.Points.Add (new DataPoint (pair.Key, pair.Value));
 			}
 		
-			myModel.Series.Add(s1);
+			myModel.Series.Add (s1);
 			plotView.Model = myModel;
 
 			return plotView;

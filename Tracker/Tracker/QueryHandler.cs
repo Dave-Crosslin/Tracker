@@ -8,38 +8,38 @@ using OxyPlot;
 using OxyPlot.GtkSharp;
 using OxyPlot.Axes;
 using OxyPlot.Series;
-
+using Google.Protobuf;
+using Grpc.Core;
 
 namespace Tracker
-
 {
 	public class DBHandler
-	{ 	
-		private static MySqlConnection connection = new MySqlConnection();
+	{
+		private static MySqlConnection connection = new MySqlConnection ();
 
 		public string name;
 
 
-		public void ConnectionOpen()
+		public void ConnectionOpen ()
 		{
 			connection.ConnectionString = "Server=localhost;Database=TestDB;User ID=root;Password=DC;Pooling=false"; 
-			connection.Open();
+			connection.Open ();
 		}
 
-		public void ConnectionClose()
+		public void ConnectionClose ()
 		{
 			connection.Close ();
 		}
 
-		public string QueryCreate(string name)
+		public string QueryCreate (string name)
 		{
 			string commtext = String.Format ("SELECT Production, DT FROM Employees WHERE ID = '{0}' GROUP BY DT, Production;", name);
 			return commtext;
 		}
 
-		public Dictionary<Int64,int>QueryExecute(string commtext) 
+		public Dictionary<Int64,int>QueryExecute (string commtext)
 		{	
-			Dictionary <Int64, int> Dict = new Dictionary<Int64,int>();
+			Dictionary <Int64, int> Dict = new Dictionary<Int64,int> ();
 
 			MySqlCommand command = connection.CreateCommand ();
 			command.CommandText = commtext;
@@ -48,45 +48,44 @@ namespace Tracker
 
 				while (Reader.Read ()) {
 
-					int myInt = Convert.ToInt32(Reader.GetValue (0).ToString ());
+					int myInt = Convert.ToInt32 (Reader.GetValue (0).ToString ());
 
-					Int64 myDT = Int64.Parse(Convert.ToDateTime (Reader.GetValue (1).ToString ()).ToString("HH"));
+					Int64 myDT = Int64.Parse (Convert.ToDateTime (Reader.GetValue (1).ToString ()).ToString ("HH"));
 
 
-					if(Dict.ContainsKey(myDT)){
+					if (Dict.ContainsKey (myDT)) {
 						
 						Dict [myDT] += myInt;
-					}
-					else {
+					} else {
 
-					Dict.Add(myDT,myInt);
+						Dict.Add (myDT, myInt);
 
 					}
 				} 
 			
-			return Dict;
-		}    
-	}
+				return Dict;
+			}    
+		}
 
-			public List <string> comboboxFill(string commtext)
+		public List <string> comboboxFill (string commtext)
 		{
 
-		List<string> row = new List<string> ();
+			List<string> row = new List<string> ();
 
-		MySqlCommand command = connection.CreateCommand ();
-		command.CommandText = commtext;
-		using (MySqlDataReader Reader = command.ExecuteReader ()) {
+			MySqlCommand command = connection.CreateCommand ();
+			command.CommandText = commtext;
+			using (MySqlDataReader Reader = command.ExecuteReader ()) {
 
-			while (Reader.Read ()) {
+				while (Reader.Read ()) {
 
-				for (int i = 0; i < Reader.FieldCount; i++) {
-					row.Add (Reader.GetValue (i).ToString ());
-				}
-			} 
+					for (int i = 0; i < Reader.FieldCount; i++) {
+						row.Add (Reader.GetValue (i).ToString ());
+					}
+				} 
+			}
+			return row;
 		}
-		return row;
-	  }
-   }
+	}
 }
 	
 	
