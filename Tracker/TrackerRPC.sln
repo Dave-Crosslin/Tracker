@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerServer", "TrackerRPC\TrackerServer.csproj", "{48E9881B-BBC4-4AA5-A82F-30F6A2174D7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerRPC", "TrackerServer\TrackerRPC.csproj", "{E76C7F38-563C-41EF-8439-14BF603132A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerClient", "TrackerClient\TrackerClient.csproj", "{D156A2B8-DC2D-4EAA-B63F-C10A969B031C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48E9881B-BBC4-4AA5-A82F-30F6A2174D7B}.Debug|x86.ActiveCfg = Debug|x86
+		{48E9881B-BBC4-4AA5-A82F-30F6A2174D7B}.Debug|x86.Build.0 = Debug|x86
+		{48E9881B-BBC4-4AA5-A82F-30F6A2174D7B}.Release|x86.ActiveCfg = Release|x86
+		{48E9881B-BBC4-4AA5-A82F-30F6A2174D7B}.Release|x86.Build.0 = Release|x86
+		{D156A2B8-DC2D-4EAA-B63F-C10A969B031C}.Debug|x86.ActiveCfg = Debug|x86
+		{D156A2B8-DC2D-4EAA-B63F-C10A969B031C}.Debug|x86.Build.0 = Debug|x86
+		{D156A2B8-DC2D-4EAA-B63F-C10A969B031C}.Release|x86.ActiveCfg = Release|x86
+		{D156A2B8-DC2D-4EAA-B63F-C10A969B031C}.Release|x86.Build.0 = Release|x86
+		{E76C7F38-563C-41EF-8439-14BF603132A9}.Debug|x86.ActiveCfg = Debug|x86
+		{E76C7F38-563C-41EF-8439-14BF603132A9}.Debug|x86.Build.0 = Debug|x86
+		{E76C7F38-563C-41EF-8439-14BF603132A9}.Release|x86.ActiveCfg = Release|x86
+		{E76C7F38-563C-41EF-8439-14BF603132A9}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal

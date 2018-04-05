@@ -1,0 +1,24 @@
+syntax = "proto3";
+ 
+package TrackerRPC;
+
+import "google/protobuf/timestamp.proto";
+
+service dbUpdate {
+
+ rpc GetRow(UpdateRequest) returns (RecieptConfirmation) {}
+
+}
+
+message UpdateRequest{
+
+ string id = 1;
+ int32 production = 2;
+ google.protobuf.Timestamp DT = 3;
+ 
+}
+
+message RecieptConfirmation{
+
+    bool wasRecieved = 1;
+}
