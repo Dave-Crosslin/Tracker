@@ -89,10 +89,17 @@
     <Compile Include="Grapher.cs" />
     <Compile Include="Window.cs" />
     <Compile Include="gtk-gui\Tracker.MainWindow.cs" />
+    <Compile Include="TrackerRPCGrpc.cs" />
+    <Compile Include="TrackerRPC.cs" />
+    <Compile Include="ServerHandler.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Grpc.Core.1.10.0\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.1.10.0\build\net45\Grpc.Core.targets')" />
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Protos\TrackerRPC.proto" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Protos\" />
   </ItemGroup>
 </Project>

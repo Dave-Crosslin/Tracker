@@ -28,6 +28,9 @@ namespace Tracker
 			List<string> row = handler.comboboxFill (commtext);
 			win.AddtoCombobox (row);
 
+			ServerHandler Server = new ServerHandler ();
+			Server.StartServer ();
+
 	
 
 			

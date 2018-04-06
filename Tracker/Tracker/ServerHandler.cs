@@ -3,7 +3,8 @@ using System.Threading.Tasks;
 using Grpc.Core;
 using TrackerRPC;
 
-namespace TrackerServer
+
+namespace Tracker
 {
 	class TrackerRPCImpl : dbUpdate.dbUpdateBase
 
@@ -15,30 +16,32 @@ namespace TrackerServer
 
 		}
 	}
+	public class ServerHandler
 
-	class MainClass
 	{
-		const int Port = 50051;
-		
-		public static void Main (string[] args)
+		public ServerHandler ()
 		{
-			Server server = new Server
-			{
-				Services = {dbUpdate.BindService(new TrackerRPCImpl()) },
-				Ports = { new ServerPort("localhost", Port, ServerCredentials.Insecure) }
+			
+		}
+
+		const int Port = 50051;
+
+
+		public void StartServer(){		
+			Server server = new Server {
+				Services = { dbUpdate.BindService (new TrackerRPCImpl ()) },
+				Ports = { new ServerPort ("localhost", Port, ServerCredentials.Insecure) }
 			};
-			server.Start();
+			server.Start ();
 
 			Console.WriteLine ("Tracker Server listening on port " + Port);
-			Console.WriteLine("Press any key to stop the server...");
+			Console.WriteLine ("Press any key to stop the server...");
+			Console.ReadKey ();
 
-		
-			Console.ReadKey();
-			
 			server.ShutdownAsync().Wait();
 
-
 		}
-			
+
 	}
 }
+
