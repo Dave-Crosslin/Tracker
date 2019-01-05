@@ -19,14 +19,12 @@ namespace Tracker
 
 		public Grapher ()
 		{
+
 		}
-
-
 
 		public PlotView CreateGraph (DBHandler Handler, Dictionary<Int64,int>dictionary)
 		{ 
 			string title = Handler.name;
-
 			var plotView = new PlotView ();
 			plotView.ShowAll ();
 

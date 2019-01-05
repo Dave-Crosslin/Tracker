@@ -19,10 +19,8 @@ namespace Tracker
 		{
 			Application.Init ();
 			MainWindow win = new MainWindow ();
-
 			DBHandler handler = new DBHandler ();
-	
-		
+
 			handler.ConnectionOpen ();
 			string commtext = " SELECT ID FROM Employees GROUP BY ID;";
 			List<string> row = handler.comboboxFill (commtext);
@@ -30,10 +28,8 @@ namespace Tracker
 
 			ServerHandler Server = new ServerHandler ();
 			Server.StartServer ();
-
-	
-
-			
+			ClientHandler Client = new ClientHandler ();
+			Client.ClientService ();
 
 			win.Show ();
 			Application.Run ();
